@@ -8,6 +8,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Snake from "@/components/games/Snake";
 import Breakout from "@/components/games/Breakout";
 import Dodger from "@/components/games/Dodger";
+import Birds from "@/components/games/Birds";
 
 /**
  * Neon Arcade — chọn game từ menu card, game mở full màn hình MacBook
@@ -38,6 +39,14 @@ const GAMES = [
     desc: "Lái phi thuyền né bão thiên thạch ngày càng dày. Nhặt khiên, slow-mo, bom dọn màn hình và sao điểm thưởng.",
     bestKey: "dane-dodger-best",
     bestUnit: "điểm",
+  },
+  {
+    id: "birds",
+    icon: "🐦",
+    name: "Bird Sort",
+    desc: "Giải đố xếp đàn chim cùng màu về chung một cành. Chim chỉ đậu cạnh bạn cùng màu hoặc cành trống — càng lên màn càng nhiều màu.",
+    bestKey: "dane-birds-best",
+    bestUnit: "màn",
   },
 ] as const;
 
@@ -75,7 +84,7 @@ export default function Game() {
             trong chiếc MacBook này. Có power-up, kỷ lục và đủ kịch tính đấy!
           </motion.p>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 pb-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-5 pb-10 sm:grid-cols-2 lg:grid-cols-4">
             {GAMES.map((game) => (
               <motion.button
                 key={game.id}
@@ -111,6 +120,7 @@ export default function Game() {
       {active === "snake" && <Snake onClose={close} />}
       {active === "breakout" && <Breakout onClose={close} />}
       {active === "dodger" && <Dodger onClose={close} />}
+      {active === "birds" && <Birds onClose={close} />}
     </>
   );
 }
