@@ -8,6 +8,7 @@ import Home from "@/components/views/Home";
 import Work from "@/components/views/Work";
 import About from "@/components/views/About";
 import Stack from "@/components/views/Stack";
+import Game from "@/components/views/Game";
 import Contact from "@/components/views/Contact";
 import { viewVariants, type ViewId } from "@/lib/views";
 
@@ -19,6 +20,7 @@ export default function Screen({ booted }: { booted: boolean }) {
     work: <Work />,
     about: <About />,
     stack: <Stack />,
+    game: <Game />,
     contact: <Contact />,
   };
 

@@ -1,12 +1,13 @@
 import type { Variants } from "motion/react";
 
-export type ViewId = "home" | "work" | "about" | "stack" | "contact";
+export type ViewId = "home" | "work" | "about" | "stack" | "game" | "contact";
 
 export const NAV_ITEMS: { id: ViewId; label: string }[] = [
   { id: "home", label: "Home" },
   { id: "work", label: "Work" },
   { id: "about", label: "About" },
   { id: "stack", label: "Stack" },
+  { id: "game", label: "Game" },
   { id: "contact", label: "Contact" },
 ];
 
