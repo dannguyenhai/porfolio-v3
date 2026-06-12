@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* ── Design tokens (từ Figma: AI Website Landing Design) ─────────── */
+@theme {
+  --color-void: #020208;        /* nền ngoài cùng */
+  --color-space: #0a0a16;       /* nền màn hình macbook */
+  --color-space-2: #11101f;     /* gradient phụ tím navy */
+  --color-line: rgba(255, 255, 255, 0.15);  /* viền nav/pill trong design */
+  --color-line-soft: rgba(255, 255, 255, 0.08);
+  --color-fog: rgba(228, 228, 240, 0.72);   /* body text */
+  --color-glow: #cfd4ff;
+
+  --font-display: var(--font-poppins), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-void);
+  color: #fff;
+  font-family: var(--font-body);
+  overflow: hidden; /* trải nghiệm 1 viewport — mọi thứ diễn ra trong MacBook */
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(207, 212, 255, 0.25);
+}
+
+/* Chữ gradient bạc như "Workflow" trong design */
+.text-shine {
+  background: linear-gradient(100deg, #5b5b6e 0%, #d7d7e2 45%, #8a8a9c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glow lớn sau model — Figma "Model Glow" */
+.model-glow {
+  background: radial-gradient(
+    closest-side,
+    rgba(214, 219, 255, 0.34),
+    rgba(150, 154, 215, 0.12) 45%,
+    transparent 72%
+  );
+  filter: blur(6px);
+}
+
+.text-glow {
+  background: radial-gradient(closest-side, rgba(190, 195, 255, 0.16), transparent 70%);
+}
+
+/* Thanh scrollbar bên trong màn hình */
+.screen-scroll::-webkit-scrollbar { width: 0; height: 0; }
+.screen-scroll { scrollbar-width: none; }
+
+/* Nét vẽ mảnh kiểu "wireframe" cho hero figure */
+@keyframes drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.wave-drift { animation: drift 26s linear infinite; }
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 32s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-drift, .spin-slow { animation: none; }
+}
