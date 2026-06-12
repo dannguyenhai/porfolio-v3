@@ -25,7 +25,7 @@ export default function Screen({ booted }: { booted: boolean }) {
   };
 
   return (
-    <div className="@container relative flex h-full w-full flex-col overflow-hidden bg-space">
+    <div id="screen-root" className="@container relative flex h-full w-full flex-col overflow-hidden bg-space">
       {/* Khí quyển: gradient navy + tím như "Gradient" layer trong Figma */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_70%_20%,#181736_0%,#0a0a16_45%,#06060e_100%)]" />
       <div className="pointer-events-none absolute -bottom-1/3 left-1/2 h-[80%] w-[120%] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(closest-side,rgba(120,118,200,0.16),transparent_70%)] blur-2xl" />

@@ -68,7 +68,7 @@ export default function Macbook() {
       >
         {/* ── Nắp máy / Màn hình — viền nhôm 2px kiểu MacBook Pro ── */}
         <motion.div
-          className="relative origin-bottom rounded-[clamp(14px,1.8vw,26px)] bg-gradient-to-b from-[#f4f5f8] via-[#c4c7cf] to-[#8e919c] p-[2px] shadow-[0_60px_120px_-30px_rgba(0,0,0,0.95),0_0_100px_-16px_rgba(130,134,215,0.3)] [transform-style:preserve-3d]"
+          className="relative origin-bottom rounded-[clamp(14px,1.8vw,26px)] bg-gradient-to-b from-[#f4f5f8] via-[#c4c7cf] to-[#8e919c] p-[2px] shadow-[0_60px_120px_-30px_rgba(0,0,0,0.95),0_0_100px_-16px_rgba(130,134,215,0.3)]"
           initial={{ rotateX: -89 }}
           animate={{ rotateX: opened ? 0 : -89 }}
           transition={{ duration: 1.7, ease: [0.32, 0.9, 0.25, 1] }}
